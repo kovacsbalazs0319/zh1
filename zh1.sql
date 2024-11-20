@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `zh1`.`eladok` (
   `nev` VARCHAR(45) NULL,
   `fizetes` INT NULL,
   `kisbolt_ID` INT NULL,
+  `eletkor` INT NULL,
   PRIMARY KEY (`ID`),
   INDEX `fk_eladok_kisbolt1_idx` (`kisbolt_ID`),
   CONSTRAINT `fk_eladok_kisbolt1`
@@ -80,7 +81,6 @@ insert into eladok (nev, fizetes, kisbolt_ID) values ('Kiss Anna', 300000, (sele
 insert into eladok (nev, fizetes, kisbolt_ID) values ('Nagy Cecil', 370000, (select ID from kisbolt where cim = 'Kő utca 3' LIMIT 1));
 insert into eladok (nev, fizetes, kisbolt_ID) values ('Közepes Béla', 350000, (select ID from kisbolt where cim = 'Fa út 4/B' LIMIT 1));
 
-select * from arufeltolto;
-select * from kisbolt;
-select * from eladok;
+
+select * from eladok
 

@@ -21,7 +21,7 @@ table tr th {
 }
 
 /* 4. Beszúrás oldalra mutató link legyen zöld és bal oldali margója 55 pixel */
-.insert-link {
-    color: green;
+.insert_link {
     margin-left: 55px;
+    color: green;
 }

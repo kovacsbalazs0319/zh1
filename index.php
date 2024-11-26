@@ -2,7 +2,7 @@
     session_start();
     require 'db.php';
     $db = getDb();
-    
+    $_SESSION['fasz'] = $_GET;
     $fizetesFilter = isset($_GET['fizetes']) ? intval($_GET['fizetes']) : 0;
 
     $result = $db->query("SELECT arufeltolto.nev as nev, count(kisbolt.ID) as boltokszama, sum(kisbolt.terulet) as osszterulet from 
@@ -47,7 +47,7 @@ group by arufeltolto.nev")
             </tr> 
         </table>
         <p>
-           <a href="insert.php">Új elem beszúrása</a>
+           <a class="insert-link" href="insert.php">Új elem beszúrása</a>
         </p>
         <?php endif ?>
     </body>

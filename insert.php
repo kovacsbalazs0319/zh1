@@ -3,7 +3,8 @@
 	require 'db.php';
 	$nev = '';
     $eletkor = '';
-    $fizetes = 250000;
+
+    $fasz = isset($_SESSION['fasz']) ? $_SESSION['fasz'] : [];
     if(!empty($_GET))
 	{
 		$db=getDB();
@@ -16,7 +17,8 @@
                 $insertStatement->bindParam(':nev', $nev, PDO::PARAM_STR);
                 $insertStatement->bindParam(':eletkor', $eletkor, PDO::PARAM_STR);
                 $insertStatement->execute();
-                $redirectUrl = "index.php?fizetes=" . $fizetes; // $_GET['fizetes'] 250000-re állítva
+                $redirectUrl = "index.php";
+                $redirectUrl .= "?" . http_build_query($fasz);
                 header("Location: $redirectUrl");
                 exit();
     }

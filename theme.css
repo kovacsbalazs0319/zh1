@@ -1,0 +1,27 @@
+/* 1. Név és Neptun kód kiírása legyen dőlt betűs */
+h1 {
+    font-style: italic;
+    
+}
+
+/* 2. Hibaüzenet ne legyen vastag betűs */
+h3 {
+    font-weight: normal;
+    
+}
+
+/* 3. Táblázat minden páratlanadik oszlopának (kivéve a fejléceket) háttere legyen világoskék */
+table tr td:nth-child(odd) {
+    background-color: lightblue;
+}
+
+/* Fejléc (header) maradjon alapértelmezett formázás */
+table tr th {
+    background-color: inherit;
+}
+
+/* 4. Beszúrás oldalra mutató link legyen zöld és bal oldali margója 55 pixel */
+.insert_link {
+    margin-left: 55px;
+    color: green;
+}
